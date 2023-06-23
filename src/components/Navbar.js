@@ -4,6 +4,10 @@ import { ArrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
 
 export default function Navbar() {
+    const handleDownload = () => {
+        const resumeUrl = process.env.PUBLIC_URL + "/resume.pdf";
+        window.open(resumeUrl, "_blank");
+      };
   return (
     <header className="bg-gray-800 md:sticky top-0 z-10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -21,6 +25,11 @@ export default function Navbar() {
           </a>
           <a href="#testimonials" className="mr-5 hover:text-white">
             Testimonials
+          </a>
+          <a href="#resume" className="mr-5 hover:text-white">
+          <div id="resume">
+                <button onClick={handleDownload}>View Resume</button>
+             </div>
           </a>
         </nav>
         <a
